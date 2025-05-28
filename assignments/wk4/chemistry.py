@@ -1,6 +1,6 @@
-from formula import parse_formula
-
 # In addition to the calculated molar mass and number of moles, I displayed the name of the inputed formula if found in the dictionary of known formulas otherwise I simply displayed the chemical formula.
+
+from formula import parse_formula
 
 # Indexes for inner lists in the periodic table
 NAME_INDEX = 0
@@ -129,13 +129,6 @@ def compute_molar_mass(symbol_quantity_list: list, periodic_table_dict):
     1.00794 * 2 + 15.9994 * 1
     18.01528
     """
-    # Do the following for each inner list in the
-    # compound symbol_quantity_list:
-    # Separate the inner list into symbol and quantity.
-    # Get the atomic mass for the symbol from the dictionary.
-    # Multiply the atomic mass by the quantity.
-    # Add the product into the total molar mass.
-    # Return the total molar mass.
 
     total_molar_mass = 0.0
     for symbol_quantity in symbol_quantity_list:
@@ -158,6 +151,7 @@ def get_formula_name(formula, known_molecules_dict):
             known chemical formulas and their names
     Return: the name of a chemical formula
     """
+
     if formula in known_molecules_dict:
         return known_molecules_dict[formula]
     return formula
